@@ -1,0 +1,20 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+@misc{svg:2003,
+  added-at = {2009-10-14T21:30:02.000+0200},
+  author = {Ferraiolo, Dean Jackson Jon},
+  biburl = {http://www.bibsonomy.org/bibtex/20394ef3c8f532655e45cefaf8260b757/magsilva},
+  file = {Scalable Vector Graphics (SVG) 1.1 Specification.pdf:Scalable Vector Graphics (SVG) 1.1 Specification.pdf:PDF},
+  howpublished = {W3C Recommendation},
+  interhash = {6d8d80a577d755888e8e374cd38bf769},
+  intrahash = {0394ef3c8f532655e45cefaf8260b757},
+  keywords = {imported},
+  month = {January},
+  owner = {magsilva},
+  timestamp = {2009-10-14T21:30:02.000+0200},
+  title = {Scalable Vector Graphics (SVG) 1.1 Specification},
+  url = {http://www.w3.org/TR/SVG/},
+  year = 2003
+}
+
+

@@ -1,0 +1,91 @@
+\documentclass[11pt,a4paper,ngerman]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+%
+\usepackage{fancyref}
+\usepackage{fancyhdr} 
+\usepackage{url}
+\usepackage{makeidx}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{subfig}
+\usepackage{fancyvrb}
+\usepackage{bbding}
+\usepackage[table]{xcolor}
+\usepackage{varwidth}
+\usepackage{rotating}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{tocstyle}
+\newtocstyle[KOMAlike][leaders]{alldotted}{}
+\usetocstyle{alldotted}
+%
+% PDF settings
+\usepackage[pdfstartview=FitH,pdftitle={Ausarbeitung Moderne Web-Technologien},pdfauthor={Jan Bernoth, Sascha Kretzschmann}, colorlinks=false, linktocpage, pdfborder={0 0 0}]{hyperref}
+
+%
+% Header and Footer Style
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{\slshape Jan Bernoth - Sascha Kretzschmann}
+\fancyhead[L]{\slshape\nouppercase{\rightmark}}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}} 
+%
+% No identation
+\setlength\headheight{15pt}
+\setlength\parindent{0pt} 
+%
+% Custom commands
+\newcommand\zb{z.\,B.\ }
+\renewcommand\dh{d.\,h.\ }
+\newcommand\parbig{\par\bigskip}
+\newcommand\parmed{\par\medskip}
+\newcommand{\mailto}[1]{\href{mailto:#1}{#1}}
+%
+% Misc
+\DeclareGraphicsExtensions{.pdf}
+\graphicspath{{pictures/}}
+%
+% Titel and author 
+\title{\includegraphics[width=0.6\textwidth]{pictures/logo}\\
+{\normalsize Seminar Moderne Web-Technologien\\
+Arbeitsgruppe Netzbasierte Informationssysteme}\\[9ex]
+Einführung in SVG\\}
+\author{Jan Bernoth\\{janbernoth@gmail.com}\and Sascha Kretzschmann\\{s.kretzschmann@fu-berlin.de}\\\\}
+\date{Berlin, 04.November 2014}
+
+\begin{document}
+\pagenumbering{arabic}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+%\listoffigures
+%\listoftables
+\newpage
+
+\input{inc/idee_renderingmodell}
+\input{inc/aufbau_syntax}
+\input{inc/grundkonzepte}
+\input{inc/tiny_mobile}
+\input{inc/svg_canvas_flash}
+\input{inc/ausblick}
+
+\newpage
+
+\bibliography{sources.bib}{}
+\bibliographystyle{plain}
+\end{document}
+

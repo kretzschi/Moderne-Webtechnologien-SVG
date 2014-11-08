@@ -1,0 +1,24 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Electronic{SVGRec,
+  Title                    = {Scalable Vector Graphics (SVG) 1.1 (Second Edition)},
+  Author                   = {Tester},
+  Note                     = {Letzter Zugriff: 08.11.2014},
+  Url                      = {\url{http://www.w3.org/TR/SVG/}},
+
+  Owner                    = {sascha},
+  Timestamp                = {2014.11.08}
+}
+
+@Article{LA,
+  Title                    = {Scalable Vector Graphics (SVG) 1.1 (Second Edition)},
+  Author                   = {Tester},
+  Journal                  = {sdads},
+  Year                     = {1231},
+
+  Owner                    = {sascha},
+  Timestamp                = {2014.11.08}
+}
+
