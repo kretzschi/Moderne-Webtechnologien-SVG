@@ -1,16 +1,12 @@
-%%  ALPHADIN.BST           Ausgabe [8.2]   2006-01-02
+%%  ABBRVDIN.BST           Ausgabe [8.2]  2006-01-02
+%%  mit doi-, url-, urn-Funktionen
+%%       ersetzt ABBRVDIN.BST   Ausgabe [8.1b1]  15/12/2004
 %%
-%%  ersetzt ABBRVDIN.BST   Ausgabe [8.1b4]  15/12/2004
-%%  wichtigste Aenderung gegenueber Version [8.1b4]:
-%%  die Standardergaenzung "Online-Ressource" bei Internetquellen
-%%  ist ersatzlos gestrichen worden (wegen ueberfluessiger Redundanz).
-%%
-%
-%%  K.F.Lorenzen  (Copyright 1994-2006)  email:  lorenzen.marxen@t-online.de
+%%   K.F.Lorenzen  (Copyright 1994-2006)  email:  lorenzen.marxen@t-online.de
 %%  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%%  ALPHADIN.BST wurde entwickelt aus Oren Patashnik's BibTeX standard
-%%  bibliography style `alpha'. Eine vorgegebene Literaturdatenbank laesst sich
-%%  somit beliebig nach Us- oder deutscher DIN 1505-Zitierkonvention
+%%  ABBRVDIN.BST wurde entwickelt aus Oren Patashnik's BibTeX standard
+%%  bibliography style `abbrv'. Eine vorgegebene Literaturdatenbank laesst sich
+%%  somit beliebig nach US- oder deutscher DIN 1505-Zitierkonvention
 %%  verarbeiten.
 %%  Analog zu den 4 US standard styles werden 4 DIN-gerechte bst-style Dateien
 %%  veroeffentlicht (alphadin.bst, plaindin.bst, unsrtdin.bst, abbrvdin.bst).
@@ -19,14 +15,14 @@
 %%            http://www.haw-hamburg.de/pers/Lorenzen/bibtex/
 %%            Stand: 2006-01-02
 %%  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%%  WAS IST ALPHADIN.BST ?
-%%  Dieser style produziert "deutsche" Literaturzitate in Literaturverzeichnis-
-%%  sen gemaess der deutschen Norm DIN 1505, Teil 2 vom Jan. 1984.
-%%  Die Literaturzitate werden alphabetisch nach Verfassern sortiert.
-%%  Die Zitiermarken im Text und die Ordnungsmarken im Literaturverzeichnis
-%%  bestehen aus abgekuerzten Verfasserbuchstaben plus Erscheinungsjahr in
-%%  eckigen Klammern. Die vorliegenden DIN-styles gehen ueber einige bibliogra-
-%%  phischen Beschraenkungen der Originalstyles hinaus.
+%%  WAS IST ABBRVDIN.BST ?
+%%  Dieser style produziert Literaturzitate in Literaturverzeichnissen
+%%  gemaess der deutschen Norm DIN 1505, Teil 2 vom Jan. 1984.
+%%  Die Vornamen der Verfasser, Herausgeber, Zeitschriftennamen, Monatsnamen
+%%  werden abgekuerzt. Die Anordnung im Literaturverzeichnis entspricht der von
+%%  plaindin.bst, also sortiert und in eckigen Klammern gezaehlt. Die
+%%  vorliegenden DIN-styles gehen ueber einige bibliographische Beschraenkungen
+%%  der Originalstyles hinaus.
 %
 %%  Es werden nun auch Elektronische Online / Offline Ressourcen wie Internet-
 %%  quellen, CD-ROM usw. verarbeitet. Dazu kommen besondere Publikationsformen
@@ -47,7 +43,7 @@
 %%  Erfassungs-"Fehler". Letztere haengen teilweise mit den gegenueber US-
 %%  Gepflogenheiten andersartigen bibliographischen Regeln nach DIN 1505
 %%  zusammen. Sie sind also in Wahrheit keine "Fehler" und duerfen fast immer
-%%  ignoriert werden. Dennoch pruefen Sie diese Warnungen, um herauszufinden,
+%%  ignoriert werden. Dennoch pruefen Sie diese Warnungen, um heraus zu finden,
 %%  ob Publikationstyp (=entry-type) und "fields" eventuell unzulaessig
 %%  kombiniert worden sind.
 %%  Echte Fehler ("errors") treten nur noch in Verbindung mit falscher
@@ -71,56 +67,54 @@
 %%
 %%  HINWEIS: Neben den vier bibliographischen DIN 1505 Standard-Stilen
 %%           nach den Original-styles von Oren Patashnik
-%%           gibt es noch vier DIN 1505 Adaptionen der NATBIB-style
-%%           Emulationen von Patrick W.Daly. Die Fuelle der darin
-%%           implementierten Zitierweisen geht weit ueber die urspruenglichen
-%%           Standardstyles hinaus.
+%%           gibt es zusaetzlich vier DIN 1505 Modifikationen der style
+%%           Emulationen des NATBIB-Pakets von Patrick W.Daly.
+%%           In den NATBIB-Modifikationen werden jetzt alle von P.W. Daly
+%%           implementierten Zitierweisen des Autor-Jahr-Stils unterstuetzt.
+%%           Damit erhaelt der Anwender eine weit ueber die urspruenglichen
+%%           Standardstyles hinausreichende Flexibilitaet beim Zitieren.
 %%           Naeheres unter URL http://www.haw-hamburg.de/pers/Lorenzen/bibtex/
 %%
-%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%%  version 0.99c for BibTeX versions 0.99c or later, LaTeX2e version
-%%  Copyright (C) 1985, all rights reserved.
-%%  Copying of this file is authorized only if either
-%%  (1) you make absolutely no changes to your copy, including name, or
-%%  (2) if you do make changes, you name it something other than
-%%  alphadin.bst
-%%  This restriction helps ensure that all standard styles are identical.
 %%
+%%  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%       version 0.99c for BibTeX versions 0.99c or later, LaTeX2e
+%       Copyright (C) 1985, all rights reserved.
+%       Copying of this file is authorized only if either
+%       (1) you make absolutely no changes to your copy, including name, or
+%       (2) if you do make changes, you name it something other than
+%       plaindin.bst, unsrtdin.bst, alphadin.bst, and abbrvdin.bst.
+%       This restriction helps ensure that all standard styles are identical.
+%       The file btxbst.doc has the original documentation for style 'alpha'.
 %%
+%%  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %%
-%%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 %%  NEUE FELDER
 %%  Zur Erfassung der neuen digitalen Online-Medien z.B. Internetquellen, E-journals, E-books,
 %%  E-mail u.a. gibt es die zusaetzlichen Felder: doi, url, urn, lastchecked
 %%  Internetquellen werden vorzugsweise mit dem BOOKLET-Typ erfasst.
 %%  Normen, Patente, Schutzrechte sind mit dem MISC-Typ zu erfassen.
-
+%
+%
 ENTRY
-  { address      %%  Verlagsort (immer!)
-    author       %%  persoenlicher Urheber eines Werkes oder am Zustandekommen
-                 %%  beteiligte Personen(=Mitarbeiter, Uebersetzer, Redakteur u.a.)
+  { address      %%  Verlagsort
+    author       %%  persoenlicher Urheber eines Werkes
     booktitle    %%  a) Gesamttitel eines mehrbaendigen Werkes
 %                %%  b) Titel des Sammelwerks, das einzelne selbstaendige
-%                %%     Beitraege mit eigenem Titel enthaelt ->incollection
+%                %%     Beitraege mit eigenem Titel enthaelt (->incollection)
     chapter      %%  Kapitel in einem Buch (Monographie)
-    doi          %%% Digital Object Identifier ->article
-    edition      %%  a) Auflagevermerk
-%                %%  b) bei selbst. elektron. Quellen == Version ->booklet
+    doi          %%% Digital Object Identifier
+    edition      %%  Auflagevermerk; bei selbst. elektron. Dok. == Version
     editor       %%  Persoenl.Herausgeber oder Koerperschaftlicher Herausgeber
-    howpublished %%  beliebiger Verlegervermerk: veroeffentlicht "von wem, wo"
-    institution  %%  Institution, die e.verlagsfreie Veroeffentlichung betreibt
+    howpublished %%  beliebiger Verlegervermerk: von wem, wo
+    institution  %%  Institution, die e.Verlagsfreie Veroeffentlichung betreibt
     isbn         %%  Standardnr fuer Buecher
     issn         %%  - " -    :      Zeitschriften u. Serien
     journal      %%  Titel einer Zeitschrift
     key          %%  Zusaetzlich vergebener Sortierschluessel, mitunter notwend.
-    lastchecked  %%  neues Feld fuer das Datum des Online-Abrufs
-%                %%  einer Internetquelle (n. GRAY )
-    month        %%  naehere Bestimmung des Erscheinungsjahres -> macro 's
-    note         %%  freies Eingabefeld fuer zusaetzliche Informationen z. Quelle
-    number       %%  Versch. Bedeutungen in Abhaengigkeit vom Eingabetyp:
-%                %%  a) Bandnummer einer gezaehlten Reihe (series)
-%                %%  b) Heftnummer einer Zeitschrift ->article
-%                %%  c) Nummer eines Forschungsberichts ->techreport
+    lastchecked  %%  Online Abruf einer Internetquelle ( GRAY ); 22.1.2004
+    month        %%  naehere Bestimmung des Erscheinungsjahres (-> macro 's)
+    note         %%  freies Eingabefeld fuer zusaetzliche Informationen
+    number       %%  Mehrfachbedeutung in Abhaengigkeit vom Eingabetyp
     organization %%  a) Name der Organisation/des Organisators e. Tagung,Konferenz
 %                %%  b) Name einer Firma/Gesellschaft, die ein ->manual herausgab
     pages        %%  Umfangsangaben, meist Seitenzahlen
@@ -129,16 +123,44 @@ ENTRY
     series       %%  Titel e.Reihe, in der ein best. Buchtitel erschienen ist
     title        %%  Titel einer (namentlich gekennzeichneten) Veroeffentlichung
     type         %%  Zusatzfeld z.Kennzeichnung e.besonderen Publikationstyps
-    url          %%  neues Feld URL ( Uniform Resource Locator ):
-%                %%  Serveradresse einer Internetquelle
-    urn          %%  neues Feld URN ( Uniform Resource Name ):
-%                %%  Persistent Identifier einer Internetquelle
-    volume       %%  a) Zaehlung bei einem mehrbaendigen Werk ->book/->proceedings
-%                %%  b) Jahrgang einer Zeitschrift ->article
+    url          %%%  Internet-Adresse URL ( Uniform Resource Locator )
+    urn          %%   Persistent Identifier URN ( Uniform Resource Name )
+    volume       %%  a) Zaehlung bei einem mehrbaendigen Werk (-> book)
+%                %%  b) Jahrgang einer Zeitschrift (-> article
     year         %%  Erscheinungsjahr
   }
   {}
-  { label extra.label sort.label short.list }
+  { label extra.label sort.label }
+
+%% Variablen-Vereinbarungen
+
+INTEGERS { output.state before.all mid.sentence after.sentence after.block }
+
+INTEGERS { colon.after  period.dash }
+
+INTEGERS { after.firstblock }
+
+%% fuer die Namensbehandlung
+
+INTEGERS { zahl  lang }
+
+INTEGERS { nameptr namesleft numnames }
+
+INTEGERS { ptr collation collrest }
+
+%% fuer die Sortierung bei der label-Produktion
+INTEGERS { len }
+
+INTEGERS { number.label longest.label.width }
+%%----------------------------------------------------------------------
+
+STRINGS { h s t u v w }
+
+%% bei der Behandlung der Namen-Funktionsbezeichnung (Hrsg., Redakt., usw)
+STRINGS { fkt }
+
+%% fuer die label-Produktion
+STRINGS { longest.label }
 
 %%%----------------------------------------------------------------------------
 %  Einige Standardvorgaben, die vom Benutzer veraendert werden koennen.
@@ -161,30 +183,6 @@ FUNCTION { eress } { "Elektronische Ressource" }
 
 %%%-----------------------------------------------------------------------------------
 
-INTEGERS { output.state before.all mid.sentence after.sentence after.block }
-
-INTEGERS { colon.after  period.dash }
-
-INTEGERS { after.firstblock }
-
-INTEGERS { zahl  lang }
-
-INTEGERS { nameptr namesleft numnames }
-
-INTEGERS { ptr collation collrest }
-
-INTEGERS { len }
-
-INTEGERS { et.al.char.used }
-
-INTEGERS { longest.label.width last.extra.num }
-%-------------------------
-STRINGS { longest.label last.sort.label next.extra }
-
-STRINGS { h s t u v w }
-
-STRINGS { fkt }
-%-------------------------
 
 FUNCTION {init.state.consts}
 { #0 'before.all :=
@@ -368,6 +366,72 @@ FUNCTION { capitalize }
   if$
 }
 
+FUNCTION {article.in.journal}
+{ duplicate$ empty$
+    { pop$ "" }
+    { author missing$ title missing$ and
+            { emphasize }
+            { emphasize "{In: }" swap$ * }
+          if$
+     }
+  if$
+}
+
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { new.block " \url{http://dx.doi.org/" doi * "}" *
+     %%      { new.block " \url{http://dx.medra.org/" doi * "}" *
+    }
+  if$
+}
+
+FUNCTION {format.url}
+{ urn missing$
+     { doi missing$
+          { url empty$
+             { "" }
+             { type empty$ NOT
+                 { type #-1 #4 substring$ "mail" =
+                   type #1 #4 substring$ "Mail" =
+                   OR
+                      { type$ "incollection" =
+                          { "" }
+                          { "\,Absenderadresse: \url{" url * "}" * }
+                        if$
+                      }
+                      { "\url{" url * "}" * }%%   evtl. "URL" oder "<...>"
+                    if$
+                  }
+                  { "\url{" url * "}" * }   %%   evtl. "URL" oder "<...>"
+                if$
+             }
+           if$
+          }
+          { format.doi }
+        if$
+      }
+      { "\url{http://nbn-resolving.de/urn/resolver.pl?urn=" urn * "}" *
+      }
+    if$
+}
+
+FUNCTION {format.maillist.url}
+  { url empty$
+       { "" }
+       { type empty$
+             { "" }
+             { type #-1 #4 substring$ "mail" =
+               type #1 #4 substring$ "Mail" =
+               OR
+                  { "\url{" url * "}" * }
+                  { "" }
+                if$
+              }
+           if$
+        }
+      if$
+   }
 
 %% Adelspraedikate beim Sortieren nach den(m) Vornamen auffuehren
 %% Abweichend v. DIN !!!
@@ -382,7 +446,7 @@ FUNCTION {format.names}
        s nameptr "{ll}" format.name$ 't :=
        t capitalize 't :=
        s nameptr "{ jj}" format.name$ 'w :=
-       s nameptr "{, ff}{ vv}{ jj}" format.name$ 'u :=
+       s nameptr "{, f.~}{ vv}{ jj}" format.name$ 'u :=
        u  text.length$  'lang :=
        #1 'zahl :=
        "" 'v :=
@@ -393,7 +457,7 @@ FUNCTION {format.names}
                      'skip$
                   if$
                   v  u  zahl  #2  substring$ * "." *  w * 'v :=
-                }
+               }
                'skip$
             if$
             zahl  #1  +  'zahl :=  }
@@ -473,16 +537,10 @@ FUNCTION { format.authors.organization }
         }
         { type$ "manual" =
            { organization empty$
-               { author empty$
-                   { "" }
-                   { author format.names }
-                 if$
-               }
+               { format.authors }
                { author empty$
                    { organization capitalize " (Hrsg.)" * }
-                   { author format.names " ; " *
-                     organization capitalize * " (Hrsg.)" *
-                   }
+                   { author format.names }
                  if$
                }
              if$
@@ -492,6 +550,7 @@ FUNCTION { format.authors.organization }
         }
       if$
 }
+
 
 
 FUNCTION { format.editors.organization }
@@ -522,16 +581,6 @@ FUNCTION {format.ed.incoll}
   if$
 }
 
-FUNCTION {article.in.journal}
-{ duplicate$ empty$
-    { pop$ "" }
-    { author missing$ title missing$ and
-            { emphasize }
-            { emphasize "{In: }" swap$ * }
-          if$
-     }
-  if$
-}
 
 FUNCTION {format.title}
 { title empty$
@@ -547,6 +596,13 @@ FUNCTION {format.number}
   if$
 }
 
+
+FUNCTION {format.type}
+{ type empty$
+    { "" }
+    { type " " * }  %% Text wie er dasteht; Schutzrecht, Norm etc.
+  if$
+}
 
 FUNCTION {format.digital.type}
 { type empty$
@@ -617,7 +673,6 @@ FUNCTION {format.date}
    if$
 }
 
-
 FUNCTION {format.edition.or.date}
 { edition empty$ year empty$ and
     { "" }
@@ -651,63 +706,6 @@ FUNCTION {format.edition.or.date}
   if$
 }
 
-FUNCTION {format.doi}
-{ doi empty$
-    { "" }
-    { new.block "\url{http://dx.doi.org/" doi * "}" *
-     %%      { new.block "\url{http://dx.medra.org/" doi * "}" *
-    }
-  if$
-}
-
-FUNCTION {format.url}
-{ urn missing$
-     { doi missing$
-          { url empty$
-             { "" }
-             { type empty$ NOT
-                 { type #-1 #4 substring$ "mail" =
-                   type #1 #4 substring$ "Mail" =
-                   OR
-                      { type$ "incollection" =
-                          { "" }
-                          { "\,Absenderadresse: \url{" url * "}" * }
-                        if$
-                      }
-                      { "\url{" url * "}" * }%%   evtl. "URL" oder "<...>"
-                    if$
-                  }
-                  { "\url{" url * "}" * }   %%   evtl. "URL" oder "<...>"
-                if$
-             }
-           if$
-          }
-          { format.doi }
-        if$
-      }
-      { "\url{http://nbn-resolving.de/urn/resolver.pl?urn=" urn * "}" *
-      }
-    if$
-}
-
-FUNCTION {format.maillist.url}
-  { url empty$
-       { "" }
-       { type empty$
-             { "" }
-             { type #-1 #4 substring$ "mail" =
-               type #1 #4 substring$ "Mail" =
-               OR
-                  { "\url{" url * "}" * }
-                  { "" }
-                if$
-              }
-           if$
-        }
-      if$
-   }
-
-
 FUNCTION {format.version.url}
 { url empty$ doi empty$ urn empty$ and and
    { type$ "techreport" =
@@ -726,71 +724,7 @@ FUNCTION {format.edition.or.version}
  if$
 }
 
-FUNCTION {format.online.lastcheck}
-{ lastchecked empty$
-      { url empty$ doi empty$ urn empty$ and and
-          { skip$ }
-          { "" output }
-        if$
-      }
-      { url empty$ doi empty$ urn empty$ and and
-          { "there's a lastchecked date but no url, urn or doi in "
-             cite$ * warning$
-          }
-          { part.of.sentence
-            lastchecked "Abruf: " swap$ * output
-          }
-        if$
-      }
-    if$
-}
-
-
-FUNCTION {format.maillist.lastcheck}
-   { type empty$ NOT
-       { type #-1 #4 substring$ "mail" =
-         type #1 #4 substring$ "Mail" =
-         OR
-           { format.online.lastcheck }
-           'skip$
-         if$
-       }
-       'skip$
-     if$
-   }
-
 FUNCTION {format.address.publisher.year}
-{  publisher empty$
-      { address empty$
-          { year empty$
-              { "" }
-              { year }
-            if$
-          }
-          { "there's an address but no publisher in " cite$ * warning$
-              address ", " * format.date *
-          }
-        if$
-      }
-      { address empty$
-          { year empty$
-              { "neither address nor publication date in " cite$ * warning$
-                 publisher
-              }
-              { publisher ", " * format.date * }
-            if$
-          }
-          { year empty$
-              { address " : " * publisher * }
-              { address " : " * publisher * ", " * format.date * }
-            if$
-          }
-        if$
-       }
-     if$
-}
-
-FUNCTION {format.address.publisher.year.alt}
 {  publisher empty$
       { address empty$
           { year empty$
@@ -864,7 +798,7 @@ FUNCTION {format.howpublished}
   if$
 }
 
-FUNCTION {format.lastchecked.or.type}%% nur in misc-Funktion
+FUNCTION {format.lastchecked.or.type}
 {  lastchecked empty$
       { url empty$ doi empty$ urn empty$ and and
           { type empty$
@@ -1080,6 +1014,29 @@ FUNCTION {format.bkpages.collat.check}
   if$
 }
 
+FUNCTION {format.bkpages.collat.check.alt}
+{ 's :=
+  #1 'ptr :=
+  s text.length$ 'collation :=
+  collation 'collrest :=
+  { collrest #0 > }
+  { s ptr #2 substring$ 't :=
+    t "S." =
+      { format.pages.bkcollation
+        #0 'collrest := }
+      { ptr #1 + 'ptr :=
+        collrest #1 - 'collrest :=
+        #1 collrest =
+          { format.pages.book }
+          { skip$ }
+        if$
+      }
+    if$
+  }
+ while$
+}
+
+
 FUNCTION {format.vol.year.num.pages}
 { volume field.or.null
     year empty$
@@ -1172,6 +1129,39 @@ FUNCTION {format.thesis.tr.type}
  if$
 }
 
+FUNCTION {format.online.lastcheck}
+{ lastchecked empty$
+      { url empty$ doi empty$ urn empty$ and and
+          { skip$ }
+          { "" output }
+        if$
+      }
+      { url empty$ doi empty$ urn empty$ and and
+          { "there's a lastchecked date but no url, urn or doi in "
+             cite$ * warning$
+          }
+          { part.of.sentence
+            lastchecked "Abruf: " swap$ * output
+          }
+        if$
+      }
+    if$
+}
+
+FUNCTION {format.maillist.lastcheck}
+   { type empty$ NOT
+       { type #-1 #4 substring$ "mail" =
+         type #1 #4 substring$ "Mail" =
+         OR
+           { format.online.lastcheck }
+           'skip$
+         if$
+       }
+       'skip$
+     if$
+   }
+
+
 FUNCTION {format.article.crossref}
 { key empty$
     { journal empty$
@@ -1196,6 +1186,7 @@ FUNCTION {format.crossref.editor}
         'skip$
         { editor #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
             { ua.etal }
+
             { " ; " * editor #2 "{vv~}{ll}" format.name$ * " (Hrsg.)" * }
           if$
         }
@@ -1536,12 +1527,9 @@ FUNCTION {mastersthesis}
   format.date "year" output.check
   format.url output
   format.online.lastcheck
-%%  format.digital.resource.type
   doi set.period.dash.check
   urn set.period.dash.check
   format.doi.urn output
-%%  pages set.period.dash.check
-%%  format.pages.book output
   pages empty$
     { skip$ }
     { pages set.period.dash.check
@@ -1567,7 +1555,6 @@ FUNCTION {phdthesis} %%  {mastersthesis}% ist identisch bis auf Standardwert, s.
   format.date "year" output.check
   format.url output
   format.online.lastcheck
-%%  format.digital.resource.type
   doi set.period.dash.check
   urn set.period.dash.check
   format.doi.urn output
@@ -1577,8 +1564,6 @@ FUNCTION {phdthesis} %%  {mastersthesis}% ist identisch bis auf Standardwert, s.
       pages format.bkpages.collat.check output
     }
   if$
-%%  pages set.period.dash.check
-%%  format.pages.book output
   note set.period.dash.check
   note output
   fin.entry
@@ -1677,9 +1662,7 @@ FUNCTION {misc}
                      { format.url output }%%%  das waere e. reine URL
                    if$
                  }
-                 { note " " * output.nonnull
-                 %%  format.url format.date output
-                 }
+                 { note " " * output.nonnull }
                if$
              }
              { author empty$
@@ -1781,7 +1764,6 @@ FUNCTION {techreport}
   format.tr.series.or.number "number" output.check
   "Forschungsbericht" format.thesis.tr.type set.period.dash.check
   "Forschungsbericht" format.thesis.tr.type output
-%%  format.digital.resource.type
   pages empty$
     { skip$ }
     { pages set.period.dash.check
@@ -1796,47 +1778,49 @@ FUNCTION {techreport}
   fin.entry
 }
 
-FUNCTION {unpublished} {misc}%%       AUTHOR, TITLE, NOTE muessen sein!
-%%                                    andere Felder sind optional
+
+FUNCTION {unpublished} {misc}
 
 FUNCTION {default.type} { misc }
 
+%%--------------------------  abgekuerzte Monatsnamen  --------------
 
-MACRO {jan} {"Januar"}
+MACRO {jan} {"Jan."}
 
-MACRO {feb} {"Februar"}
+MACRO {feb} {"Febr."}
 
 MACRO {mar} {"M{\^^b a}rz"}
 
-MACRO {apr} {"April"}
+MACRO {apr} {"Apr."}
 
 MACRO {mai} {"Mai"}
 
 MACRO {may} {"Mai"}
 
-MACRO {jun} {"Juni"}
+MACRO {jun} {"Jun."}
 
-MACRO {jul} {"Juli"}
+MACRO {jul} {"Jul."}
 
-MACRO {aug} {"August"}
+MACRO {aug} {"Aug."}
 
-MACRO {sep} {"September"}
+MACRO {sep} {"Sept."}
 
-MACRO {okt} {"Oktober"}
+MACRO {okt} {"Okt."}
 
-MACRO {oct} {"Oktober"}
+MACRO {oct} {"Okt."}
 
-MACRO {nov} {"November"}
+MACRO {nov} {"Nov."}
 
-MACRO {dez} {"Dezember"}
+MACRO {dez} {"Dez."}
 
-MACRO {dec} {"Dezember"}
+MACRO {dec} {"Dez."}
 
 %%$$$  stillgelegte Beispiele fuer den Gebrauch von Kuerzeln (hier Zs-Titel).
+%%     im abbrvdin-Stil werden die Zeitschriftennamen abgekuerzt!
 
-%%MACRO {acmcs} {"ACM Computing Surveys"}
+%%MACRO {acmcs} {"ACM Comp. Surv."}
 
-%%MACRO {acta} {"Acta Informatica"}
+%%MACRO {acta} {"Acta Informat."}
 
 READ
 
@@ -1852,140 +1836,6 @@ FUNCTION {chop.word}
     { s len #1 + global.max$ substring$ }
     's
   if$
-}
-
-FUNCTION {initialize.et.al.char.used}
-{ #0 'et.al.char.used :=
-}
-
-EXECUTE {initialize.et.al.char.used}
-
-FUNCTION {format.lab.names}
-{ 's :=
-  s num.names$ 'numnames :=
-  numnames #1 >
-    { numnames #4 >
-        { #3 'namesleft := }
-        { numnames 'namesleft := }
-      if$
-      #1 'nameptr :=
-      ""
-        { namesleft #0 > }
-        { nameptr numnames =
-            { s nameptr "{ff }{vv }{ll}{ jj}" format.name$ "others" =
-%%                { "\," *  %% kein besonderes Zeichen fuer "others" i. label
-                { "{\etalchar{+}}" *   %% ein plus-Zeichen (+) fuer "others"!
-                  #1 'et.al.char.used :=
-                }
-                { s nameptr "{l{}}" format.name$ * }
-              if$
-            }
-            { s nameptr "{l{}}" format.name$ * }
-          if$
-          nameptr #1 + 'nameptr :=
-          namesleft #1 - 'namesleft :=
-        }
-      while$
-      numnames #4 >
-%%        { "\," *  %%  s. Bemerkung oben
-        { "{\etalchar{+}}" *
-          #1 'et.al.char.used :=
-        }
-        'skip$
-      if$
-    }
-    { s #1 "{l{}}" format.name$
-      duplicate$ text.length$ #2 <
-        { pop$ s #1 "{ll}" format.name$ #3 text.prefix$ } %%  vgl. Anmerkung!
-        'skip$
-      if$
-    }
-  if$
-}
-
-FUNCTION {author.key.label}
-{ author empty$
-    { key empty$
-        { cite$ #1 #3 substring$ }
-        { key #3 text.prefix$ }
-      if$
-    }
-    { author format.lab.names }
-  if$
-}
-
-FUNCTION {author.editor.key.label}
-{ author empty$
-    { editor empty$
-        { key empty$
-            { cite$ #1 #3 substring$ }
-            { key #3 text.prefix$ }
-          if$
-        }
-        { editor format.lab.names }
-      if$
-    }
-    { author format.lab.names }
-  if$
-}
-
-FUNCTION {author.key.organization.label}
-{ author empty$
-    { key empty$
-        { organization empty$
-            { cite$ #1 #3 substring$ }
-            { "The " #4 organization chop.word #3 text.prefix$ }
-          if$
-        }
-        { key #3 text.prefix$ }
-      if$
-    }
-    { author format.lab.names }
-  if$
-}
-
-FUNCTION {editor.key.organization.label}
-{ editor empty$
-    { key empty$
-        { organization empty$
-            { cite$ #1 #3 substring$ }
-            { "The " #4 organization chop.word organization }
-          if$
-        }
-        { key #5 text.prefix$ }%%  man kann Laenge des key einstellen
-      if$
-    }
-    { key empty$%%  wenn key vh., dann macht er das label! Lo,18/5/99
-        { editor format.lab.names }
-        { key #5 text.prefix$ }
-      if$
-    }
-  if$
-}
-
-FUNCTION {calc.label}
-{ type$ "book" =
-  type$ "booklet" =
-  type$ "inbook" =
-  or or
-    'author.editor.key.label
-    { type$ "proceedings" =
-        'editor.key.organization.label
-        { type$ "manual" =
-            'author.key.organization.label
-            'author.key.label
-          if$
-        }
-      if$
-    }
-  if$
-  duplicate$
-  year field.or.null purify$ #-1 #2 substring$
-  *
-  'label :=
-  year field.or.null purify$ #-1 #4 substring$
-  *
-  sortify 'sort.label :=
 }
 
 FUNCTION {sort.format.names}
@@ -2096,14 +1946,9 @@ FUNCTION {editor.organization.sort}
 }
 
 FUNCTION {presort}
-{ calc.label
-  sort.label
-  "    "
-  *
-  type$ "book" =
-  type$ "booklet" =
+{ type$ "book" =
   type$ "inbook" =
-  or or
+  or
     'author.editor.sort
     { type$ "proceedings" =
         'editor.organization.sort
@@ -2115,7 +1960,6 @@ FUNCTION {presort}
       if$
     }
   if$
-  *
   "    "
   *
   year field.or.null sortify
@@ -2133,61 +1977,36 @@ ITERATE {presort}
 
 SORT
 
-FUNCTION {initialize.longest.label}
+FUNCTION {initialize.longest.label}%% nicht identisch mit der Fkt.im ALPHA-Stil
 { "" 'longest.label :=
-  #0 int.to.chr$ 'last.sort.label :=
-  "" 'next.extra :=
+  #1 'number.label :=
   #0 'longest.label.width :=
-  #0 'last.extra.num :=
 }
 
-FUNCTION {forward.pass}
-{ last.sort.label sort.label =
-    { last.extra.num #1 + 'last.extra.num :=
-      last.extra.num int.to.chr$ 'extra.label :=
-    }
-    { "a" chr.to.int$ 'last.extra.num :=
-      "" 'extra.label :=
-      sort.label 'last.sort.label :=
-    }
-  if$
-}
-
-FUNCTION {reverse.pass}
-{ next.extra "b" =
-    { "a" 'extra.label := }
-    'skip$
-  if$
-  label extra.label * 'label :=
+FUNCTION {longest.label.pass}
+{ number.label int.to.str$ 'label :=
+  number.label #1 + 'number.label :=
   label width$ longest.label.width >
-    { label 'longest.label :=
-      label width$ 'longest.label.width :=
-    }
-    'skip$
+     { label  'longest.label :=
+       label width$ 'longest.label.width :=
+     }
+       'skip$
   if$
-  extra.label 'next.extra :=
 }
 
-EXECUTE {initialize.longest.label}
+EXECUTE { initialize.longest.label }
 
-ITERATE {forward.pass}
-
-REVERSE {reverse.pass}
+ITERATE { longest.label.pass }
 
 FUNCTION {begin.bib}
-{ et.al.char.used
-    { "\newcommand{\etalchar}[1]{$^{#1}$}" write$ newline$ }
-    'skip$
-  if$
-  preamble$ empty$
+{ preamble$ empty$
     'skip$
     { preamble$ write$ newline$ }
   if$
   "\begin{thebibliography}{"  longest.label  * "}" * write$ newline$
   newline$
-  "% this bibliography is generated by alphadin.bst [8.2] from 2005-12-21"
-  write$ newline$
-  newline$
+  "% this bibliography is generated by abbrvdin.bst [8.2] from 2005-12-21"
+  write$ newline$ newline$
   "\providecommand{\url}[1]{\texttt{#1}}"
   write$ newline$
   "\expandafter\ifx\csname urlstyle\endcsname\relax"
