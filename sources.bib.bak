@@ -2,23 +2,36 @@
 % Encoding: UTF-8
 
 
-@Electronic{SVGRec,
-  Title                    = {Scalable Vector Graphics (SVG) 1.1 (Second Edition)},
-  Author                   = {Tester},
-  Note                     = {Letzter Zugriff: 08.11.2014},
-  Url                      = {\url{http://www.w3.org/TR/SVG/}},
+@TechReport{svg:2003,
+  Title                    = {Scalable Vector Graphics (SVG) 1.1 Specification},
 
-  Owner                    = {sascha},
-  Timestamp                = {2014.11.08}
+  Author                   = {Ferraiolo, Dean Jackson Jon},
+  HowPublished             = {W3C Recommendation},
+  Month                    = {January},
+  Note                     = {Letzter Zugriff: 09.11.2014},
+  Year                     = {2003},
+
+  Added-at                 = {2009-10-14T21:30:02.000+0200},
+  Biburl                   = {http://www.bibsonomy.org/bibtex/20394ef3c8f532655e45cefaf8260b757/magsilva},
+  File                     = {Scalable Vector Graphics (SVG) 1.1 Specification.pdf:Scalable Vector Graphics (SVG) 1.1 Specification.pdf:PDF},
+  Interhash                = {6d8d80a577d755888e8e374cd38bf769},
+  Intrahash                = {0394ef3c8f532655e45cefaf8260b757},
+  Keywords                 = {imported},
+  Owner                    = {magsilva},
+  Timestamp                = {2009-10-14T21:30:02.000+0200},
+  Url                      = {http://www.w3.org/TR/SVG/}
 }
 
-@Article{LA,
-  Title                    = {Scalable Vector Graphics (SVG) 1.1 (Second Edition)},
-  Author                   = {Tester},
-  Journal                  = {sdads},
-  Year                     = {1231},
-
-  Owner                    = {sascha},
-  Timestamp                = {2014.11.08}
+@TechReport{xml:2008,
+  author =	"Tim Bray and Fran\c{c}ois Yergeau and Eve Maler and
+		 Jean Paoli and Michael Sperberg-McQueen",
+  title =	"Extensible Markup Language ({XML}) 1.0 (Fifth
+		 Edition)",
+  month =	nov,
+  note = 	"http://www.w3.org/TR/2008/REC-xml-20081126/",
+  year = 	"2008",
+  bibsource =	"http://w2.syronex.com/jmr/w3c-biblio",
+  type = 	"{W3C} Recommendation",
+  institution =  "W3C",
 }
 
