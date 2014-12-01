@@ -12,12 +12,13 @@ Der Begriff skalierbar bezieht sich auf zwei Dimensionen. Zum einen ist es eine 
 Der zweite Aspekt betrifft die Skalierbarkeit im Web allgemein, da es mit anderen Standards problemlos integriert werden kann.\\
 
 \emph{Vector}\\
+Grafiken in SVG bestehen ausschließlich aus geometrischen Objekten, wie Linien und Kurven. Dadurch wird eine größere Flexibilität im Vergleich zu Rastergrafiken erzeugt, in denen alle Informationen in den einzelnen Pixeln gespeichert sind.\\
+
+\emph{Graphics}\\
+SVG sollte die Lücke zwischen XML, mit rein textuellen Informationen bzw. Rohdaten, und HTML schließen, dessen grafische Raffinesse sich damals beinahe ausschließlich auf das \texttt{<image>}-Tag beschränkte.
 
  
 \subsection{Renderingmodell}
-Das Renderingmodell von SVG kann grundlegend mit drei Begriffen zusammengefasst werden. Natürlich könnte man dieses Thema umfangreicher ausführen, jedoch sollen an dieser Stelle die Grundideen ausreichen.
-
-\emph{Paint}\\
-Paint kann hier mit "Anstrich" übersetzt werden.
-\emph{Reihenfolge}\\
-\emph{Effekt}\\
+Das Renderingmodell kann sehr detailliert betrachtet werden. An dieser Stelle soll es jedoch ausreichen, grundlegende Prinzipien kurz zu erläutern.
+Alle grafischen Objekte in SVG werden beim Rendern nacheinanderfolgend auf das Ausgabegerät "gemalt". Dabei belegt jede Operation einen bestimmten, meist vom Ersteller festgelegten, Bereich. Ist an dieser Stelle schon ein anderes Objekt, wird es (teilweise) überdeckt.
+Objekte, welche am Anfang des Dokuments definiert wurden, werden auch zuerst gerändert. Enthält ein Objekt untergeordnete Objekte, werden diese auf den Bereich des Elternobjektes angewendet.
