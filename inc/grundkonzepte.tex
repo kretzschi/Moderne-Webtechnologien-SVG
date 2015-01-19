@@ -1,1 +1,28 @@
 \section{Integrierte Grundkonzepte}
+
+\subsection{Koordinatensystem}
+Koordinatensysteme sind ein wichtiges Konzept in SVG. Sie legen fest, wo sich Objekte befinden bzw. rendern lassen. Dabei wird ein Rechteck durch eine gedachte "unendliche" x- und y-Achse augespannt, das so genannte \emph{Canvas}. Der Ursprung desses ist in der oberen linken Ecke.
+Das eigentliche Rendering findet auf dem \emph{Viewport} statt, einem ebenfalls viereckigen, endlichen Bereich auf dem Canvas. Der Viewport kann zum Beispiel durch die \texttt{width} und \texttt{height} Attribute des SVG-Elements festgelegt werden.
+Eine entsprechende Abbildung befinden sich im Anhang Abbildung \ref{fig:koor}.
+
+Weiterhin Transformationen auf Objekten ausgeführt werden und zwar auf Grundlage der Koordinatensysteme. Es gibt vier grundlegende Transformationsmöglichkeiten in SVG. Siehe dazu Abbildung \ref{fig:trans} für Translationen, Abbildung \ref{fig:rot} für Rotation und Vergrößerung, sowie Abbildung \ref{fig:skew} für Verzerrung.
+
+\subsection{Pfad}
+Pfade sind ein sehr mächtiges Konzept in SVG. Manchmal reichen die Basisformen (s. \ref{basic_shapes}) nicht aus. In diesem Fall kann man auf Pfade zurückgreifen, die mit dem Element \texttt{<path>} definiert werden.
+Das Pfad-Element enthält ein Atrribut \texttt{d}, welches die Kontur des zu beschreibenden Objektes repräsentiert und durch Punkte beschrieben wird. Man stellt sich einen Stift vor, den man an einem bestimmten Startpunkt ansetzt. Zusätzlich gibt ein Buchstabe vor jedem Punkt an, wie genau sich dieser gedachte Stift verhält. Ein einfaches Beispiel ist in Abbildung \ref{fig:path} dargestellt.
+Der Unterschied zu den Groß-und Kleinbuchstaben vor den Punkten ist die Art der Positionierung. Große Buchstaben bedeuten, dass die Punkte Absolut zum gedachten Koordinatensystem angesteuert werden. Kleine Buchstaben hingegen repräsentieren relative Pfade. Es gibt noch weitere Buchstaben, als die gezeigten. Zum Beispiel das \texttt{C, c} oder \texttt{Q, q} womit man Bézier Kurven zeichnen kann.
+
+\subsection{Filter}
+Es gibt über zwanzig verschiedene Filter-Elemente in SVG. Ein Filter wird mit dem Elment \texttt{<filter>} beschrieben. Unschärfe, Farbveränderungen oder Beleuchtungen etc. können auf SVG-Elemente entweder einzeln oder kombiniert angewendet werden und sind vergleichbar mit Filtern aus Fotobearbeitungs-Software. In Abbildung \ref{fig:filter} ist ein Unschärfefilter umgesetzt.
+
+\subsection{Muster}
+Muster werden mit dem \texttt{<pattern>} Element definiert. Dabei ist es beispielsweise möglich, ein Objekt mit bestimmten Mustern zu füllen. Ein Beispiel dafür findet man in Abbildung \ref{fig:pattern}.
+Hier wird innerhalb des \texttt{<pattern>} Elements ein Kreis definiert, der dann als Muster für das Fragezeichen verwendet wird.
+
+\subsection{Clipping und Masking}
+Diese beiden Konzepte machen es möglich, Schablonen auf Elemente anzuwenden. Der Unterschied besteht darin, dass es beim Clipping der gewählte Bereich entweder 100\% transparent oder 0\% transparent sein kann (s. Abbildung \ref{fig:clip}). Beim Masking hingegen kann der Wert der Transparenz auch zwischen 0\% und 100\% liegen.
+
+\subsection{Animation}
+Animationen sind eigentlich schon ein fortgeschrittenes Konzept, sollen aber zur Vollständigkeit noch kurz genannt werden. Für Animationen gibt es ein \texttt{<animate>} Tag, welches innerhalb des zu animierenden Objektes definiert wird. Hier wird dann beispielsweise beschrieben, zu welcher Zeit ein bestimmtes Attribut erscheint (mit dem Attribut \texttt{begin}) oder wie lange eine Animation dauert (mit dem Attribut \texttt{dur}).
+
+\newpage
