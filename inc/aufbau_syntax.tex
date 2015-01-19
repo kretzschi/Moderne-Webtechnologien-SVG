@@ -1,8 +1,38 @@
 \section{Aufbau und Syntax}
 \subsection{Einleitung}
 In diesem Abschnitt werden die wichtigsten Strukturen zum Aufbau eines SVG Dokumentes vorgestellt.
- \subsection{<svg>}
- Das \texttt{<svg>}-Tag ist das Grundlegenste. Innerhalb dessen werden alle (grafischen) Eigenschaften eines Dokuments definiert und das beliebig komplex, wobei \texttt{<svg> </svg>} bereits gültig ist. Zu bemerken ist noch, dass durch Attribute einige Eigenschaften der Ergebnisdatei bestimmt werden könne. Zum Beispiel ist es möglich über die Attribute \texttt{width} und \texttt{height} die Breite respektive Höhe des Zeichenbereichs festzulegen.
+\subsection{Grundlegende Strukturelemente}
+\emph{<svg>}\\
+ Das \texttt{<svg>}-Tag ist das Grundlegenste. Innerhalb dessen werden alle (grafischen) Eigenschaften eines Dokuments definiert und das beliebig komplex, wobei \texttt{<svg> </svg>} bereits gültig ist. Zu bemerken ist noch, dass durch Attribute einige Eigenschaften der Ergebnisdatei bestimmt werden könne. Zum Beispiel ist es möglich über die Attribute \texttt{width} und \texttt{height} die Breite respektive Höhe des Zeichenbereichs festzulegen.\\
  
- \subsection{<g>}
- Das Gruppenelement \texttt{<g>} kann zum Zusammenfassen grafischer Objekte verwendet werden. Das hat einmal den Vorteil, die Lesbarkeit von SVG Code zu verbessern und zusammenhängende Strukturen zu verdeutlichen.
+\emph{<g>}\\
+ Das Gruppenelement \texttt{<g>} kann zum Zusammenfassen von Objekte verwendet werden. Das hat einmal den Vorteil, die Lesbarkeit von SVG Code zu verbessern und zusammenhängende Strukturen zu verdeutlichen. Weiterhin können gruppierte Objekte gleichzeitig verändert werden, indem nicht jedes einzelne Element angesprochen wird, sondern lediglich die übergeordnete Gruppe. Dabei wird jede Gruppe durch ein \texttt{id}-Attribut identifiziert werden.\\
+ 
+\emph{<symbol>}\\
+ Das \texttt{<symbol>} Element ist eine weitere Möglichkeit Objekte zu gruppieren. Es hat die gleichen Eigenschaften, wie das \texttt{<g>} Element. Der wichtigste Unterschied ist, dass Objekte, die mit \texttt{<symbol>} gruppiert sind, erst gerendert werden, wenn sie referenziert werden. Referenzierungen können mit Hilfe des \texttt{<use>} Elements bewerkstelligt werden.
+ 
+ \subsection{Vordefinierte Formen}
+ SVG hat einige grundlegende Formen, die benutzt werden können, um einfache oder zusammengestzte Objekte aufzubauen.\\
+ 
+\emph{Viereck}\\
+Mit dem Element \texttt{<rect>} können einfache Vierecke definiert werden. Diese werden über die Attribute Breite (\texttt{width}) und Höhe (\texttt{height}) definiert.\\
+
+\emph{Kreis}\\
+Kreise werden mit \texttt{<circle>} beschrieben. Dabei wird die Größe über das Attribut \texttt{r} (Radius) angegeben.\\
+
+\emph{Ellipse}\\
+Das Element \texttt{<elipse>} definiert eine Ellipse, die mit den jeweiligien Radien für die x- und y-Achse definiert werden. Die entsprechenden Attribute sind \texttt{rx} und \texttt{ry}.\\
+
+\emph{Polygon}\\
+Polygone sind sehr flexible Objekte. Sie werden mit dem Element \texttt{<polygon>} definiert, welches das Attribut \texttt{points} hält. Dieses bekommt eine Anzahl Punkte. So ist es mögliche, beliebige Polygone zu zeichnen. Der letzte Punkt wird automatisch mit dem Startpunkt verbunden, so dass es Polygon entsteht.\\
+
+\emph{Linie}\\
+Um eine einfache Linie zu zeichnen, wird das Element \texttt{<line>} benutzt. Es werden nur je zwei Start- und Endpositionen für die y- und x-Achse definiert\\
+
+\emph{Polyline}\\
+Eine Polyline wird mit \texttt{<polyline>} beschrieben und ist mit dem Polygon vergleichbar. Auch eine Polyline wird über Punkte definiert mit dem einzigen Unterschied, dass der letzte Punkt nicht mit dem Startpunkt verbunden wird, so dass es sich im Prinzip um ein nicht geschlossenes Polygon handelt.\\
+
+\emph{Text}\\
+Auch Texte können leicht mit SVG dargestellt werden. Dabei wird der darzustellende Text einfach innerhalb des \texttt{<text> </text>} Elements geschrieben.
+
+\newpage
