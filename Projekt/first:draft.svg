@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -30,11 +28,11 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="962"
-     inkscape:window-height="716"
-     inkscape:window-x="75"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -50,7 +48,9 @@
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     onmouseover="evt.target.setAttribute('opacity', '0.5');"
+     onmouseout="evt.target.setAttribute('opacity','1)');">
     <rect
        style="fill:#ffffff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="rect2985-7"
@@ -423,7 +423,7 @@
        width="728.57147"
        height="5.7142768"
        x="465.71429"
-       y="-99.887505" />
+       y="888.6839" />
     <path
        sodipodi:type="arc"
        style="fill:#000000"
@@ -433,6 +433,6 @@
        sodipodi:rx="38.57143"
        sodipodi:ry="34.285713"
        d="m 937.14284,-82.744644 a 38.57143,34.285713 0 1 1 -77.14286,0 38.57143,34.285713 0 1 1 77.14286,0 z"
-       transform="translate(-57.142857,-14.285714)" />
+       transform="translate(-57.142857,974.28571)" />
   </g>
 </svg>

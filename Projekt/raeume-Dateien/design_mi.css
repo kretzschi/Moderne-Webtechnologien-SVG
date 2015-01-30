@@ -1,0 +1,238 @@
+
+
+  /* Design-Modifikationen fuer mi.fu-berlin.de
+ * CeDiS, http://www.cedis.fu-berlin.de
+ * Datum: 21.08.2012
+ *
+ */
+
+/*
+ * Version: 1.2
+ * Datum: 16.04.2013
+ */
+
+/*
+ * Modifikationen in basemod_fu_berlin
+ */
+
+    .identity_text {
+        background-color: #a3c2e0;
+        height: 25px;
+    }
+
+   .identity_text h2 a {
+        color: #2e5b89;
+    }
+
+    .nav_border_bottom {
+        border-color: #999;
+    }
+
+    /* new boxes */
+
+    .box_default {
+        padding: 14px 10px;
+    }
+
+    .box_content {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_news {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_events {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+   .box_gallery {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_links {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_downloads {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_flash {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_video {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_rss {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_contact {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_publication {
+        padding: 14px 10px;
+        background-color: #eee;
+        color: #666;
+    }
+
+    .box_spotlight {
+        padding: 13px 9px;
+        background-color: #fff;
+        border: 1px solid #69c;
+        color: #666;
+    }
+
+   /* slideshow */
+
+    #slideshow_tabs {
+        background: #a3c2e0;
+    }
+
+/*
+ * Modifikationen in nav_hlist
+ */
+
+     #open_close_nav_left, #open_close_nav_right {
+        background-color: #69c;
+    }
+
+    .open_nav_button, .close_nav_button {
+        background-color: transparent;
+        padding-top: 7px;
+    }
+  
+    .hlist {
+        background-color: #69c;
+    }
+
+    .hlist ul li a {
+        color: #fff;
+    }
+
+    .hlist ul li a:focus,
+    .hlist ul li a:hover,
+    .hlist ul li a:active {
+        background: #369;
+        color: #fff;
+    }
+
+    .hlist ul li.active strong,
+    .hlist ul li.active a,
+    .hlist ul li.active a:focus,
+    .hlist ul li.active a:hover,
+    .hlist ul li.active a:active {
+        background: #369;
+        color: #fff;
+    }
+
+    #subnav a:focus,
+    #subnav a:hover,
+    #subnav a:active,
+    #subnav li.active a {
+        background: #369;
+        color: #fff;
+    }
+
+    .hlist ul li ul li a:focus,
+    .hlist ul li ul li a:hover,
+    .hlist ul li ul li a:active,
+    .hlist ul li.active ul li a:hover,
+    .hlist ul li.active ul li a:focus,
+    .hlist ul li.active ul li a:active,
+    .hlist ul li ul li.active a {
+        background: #369;
+        color: #fff;
+    }
+
+/*
+ * Modifikationen in nav_vlist
+ */
+
+    .identity_text_mi {
+        overflow: hidden;
+        width: 192px;
+        max-height: 80px;
+    }
+
+    .identity_text_mi a {
+        display: block;
+        overflow: hidden;
+        margin: 0 5px 0 5px;
+        padding: 14px 5px 14px 10px;
+        text-decoration: none;
+        background-color: #369;
+        text-transform: uppercase;
+        font-size: 80%;
+        font-weight: bold;
+        line-height: 1.2em;
+        color: #fff;
+        max-height: 80px;
+    }
+
+    .identity_text_mi h2 {
+        margin: 0;
+    }
+
+    .identity_text_mi a:hover {
+        text-decoration: none;
+    }
+
+    .nav_mi .vlist {
+        border-top: 1px #ccc solid;
+    }
+
+    .nav_mi .vlist a,
+    .nav_mi .vlist strong,
+    .nav_mi .vlist span {
+        border-bottom: 1px #ccc solid;
+    }
+
+    .nav_mi .vlist li a, 
+    .nav_mi .vlist li a:visited {
+        background-color: #f1f1f1;
+    }
+
+    .nav_mi .vlist li.active {
+        background-color: #ddd;
+    }
+
+    .nav_mi .vlist li a:focus,
+    .nav_mi .vlist li a:hover,
+    .nav_mi .vlist li a:active {
+        background-color: #ddd;
+    }
+
+
+
+ /* fix, soll in content_fu */
+
+.teaser h2 {
+    margin-top: 0;
+}
+
+
