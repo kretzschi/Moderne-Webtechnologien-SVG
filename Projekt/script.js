@@ -7,10 +7,40 @@ var timeToRoom;
 //Sortiert nach Raum, Tag, Zeit -> Veranstaltungsname
 var roomToTime;
 
+var rooms = ["005", "006", "042", "044", "046", "049", "051", "053", "055"];
+var times = ["10", "12", "14", "16"];
 ready = function(){
   document.getElementById("rect2985-7").onclick = function (e) {
     alert("Hello");
   }
+  rooms.forEach(function(e, i, a) {
+    document.getElementById("sr" + e).onclick = function (e) {
+      var id = e.srcElement.id.substr(2,4);
+      var text = "Montag \n";
+      times.forEach(function(e, i, a) {
+        var temp = e + ": " ;
+        if (roomToTime[id]["mon"][e] == null ) {
+          temp += "frei";
+        } else {
+          temp += roomToTime[id]["mon"][e] ;
+        }
+        text += temp + "\n";
+      });
+      text += "Dienstag \n";
+      times.forEach(function(e, i, a) {
+        var temp = e + ": " ;
+        if (roomToTime[id]["di"][e] == null ) {
+          temp += "frei";
+        } else {
+          temp += roomToTime[id]["di"][e] ;
+        }
+        text += temp + "\n";
+      });
+
+      console.log(roomToTime[id]);
+      alert(text);
+    }
+  });
 }
 window.onload = function () { 
   var fileInput = document.getElementById('fileInput');
