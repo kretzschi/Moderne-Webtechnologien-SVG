@@ -7,6 +7,8 @@ var timeToRoom;
 //Sortiert nach Raum, Tag, Zeit -> Veranstaltungsname
 var roomToTime;
 
+var myDebug;
+
 var rooms = ["005", "006", "042", "044", "046", "049", "051", "053", "055"];
 var times = ["10", "12", "14", "16"];
 ready = function(){
@@ -14,8 +16,14 @@ ready = function(){
     alert("Hello");
   }
   rooms.forEach(function(e, i, a) {
-    document.getElementById("sr" + e).onclick = function (e) {
-      var id = e.srcElement.id.substr(2,4);
+    document.getElementById("sr" + e).onclick = function (evt) {
+      myDebug = evt;
+      var id ;
+      if (evt.srcElement == null ) {
+        id = evt.originalTarget.id.substr(2,4);
+      } else {
+        id = evt.srcElement.id.substr(2,4);
+      }
       var text = "Montag \n";
       times.forEach(function(e, i, a) {
         var temp = e + ": " ;
