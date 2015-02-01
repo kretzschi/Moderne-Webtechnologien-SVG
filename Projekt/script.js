@@ -73,9 +73,17 @@ window.onload = function () {
   ready();
 }
 
-var moveSlider = function(slider) {
-  var circle = document.getElementById("sr005");
-  circle.setAttributeNS(null, "style" , "fill:red");
+var setColorByAvailability = function(slider) {
+  var sliderValue = slider.value
+  rooms.forEach(function(room, i, a) {
+        var roomSVG = document.getElementById("sr" + room);
+	alert(roomToTime[room]["mon"][sliderValue]);
+        if (roomToTime[room]["mon"][sliderValue] == null ) {
+          roomSVG.setAttribute("style" , "fill:green");
+        } else {
+          roomSVG.setAttribute("style" , "fill:red");
+        }
+  });
 }
 
 function csvToObject(text) {
