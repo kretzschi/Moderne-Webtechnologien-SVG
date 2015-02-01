@@ -74,15 +74,17 @@ window.onload = function () {
 }
 
 var setColorByAvailability = function(slider) {
+  var timeField = document.getElementById("timeField");
   var sliderValue = slider.value
   rooms.forEach(function(room, i, a) {
         var roomSVG = document.getElementById("sr" + room);
-	alert(roomToTime[room]["mon"][sliderValue]);
         if (roomToTime[room]["mon"][sliderValue] == null ) {
           roomSVG.setAttribute("style" , "fill:green");
         } else {
           roomSVG.setAttribute("style" , "fill:red");
         }
+	var endTime = parseInt(slider.value) + 2;
+	timeField.innerHTML = slider.value + ":00 bis " + endTime + ":00";
   });
 }
 
