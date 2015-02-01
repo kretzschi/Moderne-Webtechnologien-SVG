@@ -85,7 +85,7 @@ var setColorByAvailability = function(slider) {
           roomSVG.setAttribute("style" , "fill:red");
         }
 	var endTime = parseInt(slider.value) + 2;
-	timeField.innerHTML = slider.value + ":00 bis " + endTime + ":00";
+	timeField.innerHTML = "Montag " + slider.value + ":00 bis " + endTime + ":00";
   });
 }
 
