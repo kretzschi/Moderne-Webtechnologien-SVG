@@ -1,6 +1,6 @@
 \section{Idee und Renderingmodell}
 \subsection{Über SVG}
-SVG wurde im September 2001 vom W3C veröffentlich und stellt eine empfohlene Spezifikation für zweidimensionale Vekorgrafiken bereit. Die aktuelle Version 1.1 wurde als W3C Recommendation am 14.Januar 2003 veröffentlicht und dient als Grundlage dieser Ausarbeitung \cite{svg:2003}.\\
+SVG wurde im September 2001 vom W3C veröffentlich und stellt eine empfohlene Spezifikation für zweidimensionale Vektorgrafiken bereit. Die aktuelle Version 1.1 wurde als W3C Recommendation am 14.Januar 2003 veröffentlicht und dient als Grundlage dieser Ausarbeitung \cite{svg:2003}.\\
 Sie basiert auf der Auszeichnungssprache XML \cite{xml:2008}.\\
 In diesem Kapitel soll kurz die Idee hinter SVG, sowie dessen Renderingmodell skizziert werden.
 
@@ -8,7 +8,7 @@ In diesem Kapitel soll kurz die Idee hinter SVG, sowie dessen Renderingmodell sk
 Hinter der Abkürzung SVG, also Scalable Vector Graphics (dt. skalierbare Vektorgrafiken), stehen mehrere Ideen und grundlegende Konzepte, die mit dem Standard umgesetzt werden sollen.\\
 
 \textit{Skalierbar}\\
-Der Begriff skalierbar bezieht sich auf zwei Dimensionen. Zum einen ist es eine Eigenschaft der Grafiken. Unabhänging der möglichen Auflösung eines Endgerätes, soll diese Art der Grafiken immer gleich scharf abgebildet werden. Auch bei Vergrößerungs- und Verkleinerungseffekten gibt es bei Vektorgrafiken keinen Qualitätsverlust.
+Der Begriff skalierbar bezieht sich auf zwei Dimensionen. Zum einen ist es eine Eigenschaft der Grafiken. Unabhängig der möglichen Auflösung eines Endgerätes, soll diese Art der Grafiken immer gleich scharf abgebildet werden. Auch bei Vergrößerungs- und Verkleinerungseffekten gibt es bei Vektorgrafiken keinen Qualitätsverlust.
 Der zweite Aspekt betrifft die Skalierbarkeit im Web allgemein, da es mit anderen Standards problemlos integriert werden kann.\\
 
 \emph{Vector}\\
@@ -20,7 +20,7 @@ SVG sollte die Lücke zwischen XML, mit rein textuellen Informationen bzw. Rohda
  
 \subsection{Renderingmodell}
 Das Renderingmodell kann sehr detailliert betrachtet werden. An dieser Stelle soll es jedoch ausreichen, grundlegende Prinzipien kurz zu erläutern.
-Alle grafischen Objekte in SVG werden beim Rendern nacheinanderfolgend auf das Ausgabegerät "gemalt". Dabei belegt jede Operation einen bestimmten, meist vom Ersteller festgelegten, Bereich. Ist an dieser Stelle schon ein anderes Objekt, wird es (teilweise) überdeckt.
-Objekte, welche am Anfang des Dokuments definiert wurden, werden auch zuerst gerändert. Enthält ein Objekt untergeordnete Objekte, werden diese auf den Bereich des Elternobjektes angewendet.
+Alle grafischen Objekte in SVG werden beim Rendern nacheinander folgend auf das Ausgabegerät "gemalt". Dabei belegt jede Operation einen bestimmten, meist vom Ersteller festgelegten, Bereich. Ist an dieser Stelle schon ein anderes Objekt, wird es (teilweise) überdeckt.
+Objekte, welche am Anfang des Dokuments definiert wurden, werden auch zuerst gerendert. Enthält ein Objekt untergeordnete Objekte, werden diese auf den Bereich des Elternobjektes angewendet.
 
 \newpage

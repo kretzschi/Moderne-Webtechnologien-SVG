@@ -3,7 +3,7 @@
 In diesem Abschnitt werden die wichtigsten Strukturen zum Aufbau eines SVG Dokumentes vorgestellt.
 \subsection{Grundlegende Strukturelemente}
 \emph{<svg>}\\
- Das \texttt{<svg>}-Tag ist das Grundlegenste. Innerhalb dessen werden alle (grafischen) Eigenschaften eines Dokuments definiert und das beliebig komplex, wobei \texttt{<svg> </svg>} bereits gültig ist. Zu bemerken ist noch, dass durch Attribute einige Eigenschaften der Ergebnisdatei bestimmt werden könne. Zum Beispiel ist es möglich über die Attribute \texttt{width} und \texttt{height} die Breite respektive Höhe des Zeichenbereichs festzulegen.\\
+ Das \texttt{<svg>}-Tag ist das Grundlegendste. Innerhalb dessen werden alle (grafischen) Eigenschaften eines Dokuments definiert und das beliebig komplex, wobei \texttt{<svg> </svg>} bereits gültig ist. Zu bemerken ist noch, dass durch Attribute einige Eigenschaften der Ergebnisdatei bestimmt werden könne. Zum Beispiel ist es möglich über die Attribute \texttt{width} und \texttt{height} die Breite respektive Höhe des Zeichenbereichs festzulegen.\\
  
 \emph{<g>}\\
  Das Gruppenelement \texttt{<g>} kann zum Zusammenfassen von Objekte verwendet werden. Das hat einmal den Vorteil, die Lesbarkeit von SVG Code zu verbessern und zusammenhängende Strukturen zu verdeutlichen. Weiterhin können gruppierte Objekte gleichzeitig verändert werden, indem nicht jedes einzelne Element angesprochen wird, sondern lediglich die übergeordnete Gruppe. Dabei wird jede Gruppe durch ein \texttt{id}-Attribut identifiziert werden.\\
@@ -12,16 +12,16 @@ In diesem Abschnitt werden die wichtigsten Strukturen zum Aufbau eines SVG Dokum
  Das \texttt{<symbol>} Element ist eine weitere Möglichkeit Objekte zu gruppieren. Es hat die gleichen Eigenschaften, wie das \texttt{<g>} Element. Der wichtigste Unterschied ist, dass Objekte, die mit \texttt{<symbol>} gruppiert sind, erst gerendert werden, wenn sie referenziert werden. Referenzierungen können mit Hilfe des \texttt{<use>} Elements bewerkstelligt werden.
  
  \subsection{Vordefinierte Formen}\label{basic_shapes}
- SVG hat einige grundlegende Formen, die benutzt werden können, um einfache oder zusammengestzte Objekte aufzubauen.\\
+ SVG hat einige grundlegende Formen, die benutzt werden können, um einfache oder zusammengesetzte Objekte aufzubauen.\\
  
 \emph{Viereck}\\
-Mit dem Element \texttt{<rect>} können einfache Vierecke definiert werden. Diese werden über die Attribute Breite (\texttt{width}) und Höhe (\texttt{height}) definiert. Ein einfaches Beispiel befindes sich im Anhang Abbildung\ref{fig:rect}\\
+Mit dem Element \texttt{<rect>} können einfache Vierecke definiert werden. Diese werden über die Attribute Breite (\texttt{width}) und Höhe (\texttt{height}) definiert. Ein einfaches Beispiel befindet sich im Anhang Abbildung\ref{fig:rect}\\
 
 \emph{Kreis}\\
 Kreise werden mit \texttt{<circle>} beschrieben. Dabei wird die Größe über das Attribut \texttt{r} (Radius) angegeben (s. Abbildung \ref{fig:circle}).\\
 
 \emph{Ellipse}\\
-Das Element \texttt{<elipse>} definiert eine Ellipse, die mit den jeweiligien Radien für die x- und y-Achse definiert werden. Die entsprechenden Attribute sind \texttt{rx} und \texttt{ry} (s. Abbildung \ref{fig:ellipse}).\\
+Das Element \texttt{<elipse>} definiert eine Ellipse, die mit den jeweiligen Radien für die x- und y-Achse definiert werden. Die entsprechenden Attribute sind \texttt{rx} und \texttt{ry} (s. Abbildung \ref{fig:ellipse}).\\
 
 \emph{Polygon}\\
 Polygone sind sehr flexible Objekte. Sie werden mit dem Element \texttt{<polygon>} definiert, welches das Attribut \texttt{points} hält. Dieses bekommt eine Anzahl Punkte. So ist es mögliche, beliebige Polygone zu zeichnen. Der letzte Punkt wird automatisch mit dem Startpunkt verbunden, so dass es Polygon entsteht (s. Abbildung \ref{fig:poly}).\\
