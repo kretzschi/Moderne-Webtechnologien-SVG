@@ -25,13 +25,6 @@ ready = function(){
       var text = "Montag \n";
       times.forEach(function(e, i, a) {
         var temp = e + ": " ;
-        if (roomToTime[id]["mon"][e] == null ) {
-          temp += "frei";
-	  roomSVG.setAttribute("style" , "fill:green");
-        } else {
-          temp += roomToTime[id]["mon"][e] ;
-	  roomSVG.setAttribute("style" , "fill:red");
-        }
         text += temp + "\n";
       });
       text += "Dienstag \n";
