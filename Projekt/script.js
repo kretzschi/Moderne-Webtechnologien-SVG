@@ -25,6 +25,11 @@ ready = function(){
       var text = "Montag \n";
       times.forEach(function(e, i, a) {
         var temp = e + ": " ;
+        if (roomToTime[id]["mon"][e] == null ) {
+          temp += "frei";
+        } else {
+          temp += roomToTime[id]["mon"][e] ;
+        }
         text += temp + "\n";
       });
       text += "Dienstag \n";
