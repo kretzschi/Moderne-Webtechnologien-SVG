@@ -4,13 +4,18 @@
 Als kleine Anwendungsmöglichkeit setzten wir eine interaktive Raumbelegung der Takustraße 9 unseres Institutes um. Dabei ist das Projekt prinzipiell als Prototyp zu sehen. Wir haben nicht auf ein ausgefeiltes grafisches Design geachtet, da wir eher einen Ausblick auf die Möglichkeiten geben wollen, was möglich ist.
 
 \subsection{Features}
-\begin{enumerate}
+\begin{itemize}
 	\item 2D Raumplan Takustraße 9 Ebene 1
 	\item Raumbelegungen einlesen
 	\item Raumbelegungen erfragen
 	\item Regler für grafisches Anzeigen der Raumbelegungen
-\end{enumerate}
+\end{itemize}
 
+Die grafische Umsetzung haben wir mit der freien Software Inkscape \cite{inkscape} realisiert. Mit diesem Programm ist es sehr leicht, große Grafiken in SVG umzusetzen und anzupassen. Alle Feinheiten haben wir dann im Code selbst justiert (z.B. exakte Abstände der Räume oder IDs). Die Beschränkung liegt dabei nur auf der Ebene 1 des FU Hauptgebäudes. Spätere Erweiterungen könnten demnach das dynamische Wechseln der Ebenen (oder sogar der Gebäude) betreffen.\\
 
+Um die Informationen der Raumbelegung nun mit Informationen zu füllen, haben wir ein Eingabefeld, welches eine csv-Datei erhält und die Informationen per JavaScript einliest und speichert. D.h. dem jeweiligen Raum werden Zeiten, zu der eine Vorlesung stattfindet, zugeordnet. Auf Grundlage dieser Informationen konnten nun weitere Funktionen umgesetzt werden.\\
+
+Die Erfragung der Räume beispielsweise geschieht mit einem Klick auf den Raum. Sämtliche Informationen zu Zeit und Veranstaltung über die Wochentage werden dann eingeblendet (mit Hilfe der \texttt{alert()}-Funktion aus JavaScript). Dies soll eine ausführliche Informationsbeschaffung darstellen. Wenn es jedoch "nur" darum geht schnell einen freien Raum zu einer bestimmten Zeit zu finden, dann eignet sich der Schieberegler dazu.\\
+Dort ändert sich die Farbe aller Räume entsprechend deren Verfügbarkeit zu der Zeit, auf dem der Regler gerade steht. Grün steht dabei für frei und rot für besetzt. Die Umsetzung war denkbar einfach. Die zuvor eingelesenen Daten werden einfach ausgelesen und entsprechend dem Schieberegler ausgewertet. Sobald der Regler betätigt wird, wird die Verfügbarkeit aller Räume (farblich) aktualisiert.
 
 \newpage
